@@ -59,3 +59,20 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## API Documentation:
+**Get Permissions:**
+```http
+GET /api/getPermissions
+```
+Grant permissions and returns a permissions list in case of seccess.
+<br>
+**Header (JSON)**
+```http
+Authorization: your_access_token
+```
+| Code     | Meaning  |
+| -------- | -------  |
+| 200      |Success (returns token)|
+
+
