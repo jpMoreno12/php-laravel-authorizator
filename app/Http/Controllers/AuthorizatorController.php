@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Psr7\Query;
 use Illuminate\Database\Eloquent\Casts\Json;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,8 +16,14 @@ class AuthorizatorController extends Controller
     {
         $bearer = $request->header('Authorization');
         $user = Http::withToken($bearer)->get('http://127.0.0.1:8000/api/user/check');
-        $userPermissions = DB::table('permissions')->pluck('name')->toArray();
-        $merged = array_merge($user->json(), ['permissions' => $userPermissions]);
+
+        $query = DB::table('permissions')
+            ->select('permissions.name')
+            ->join('permissions_by_user', 'permissions.id', '=', 'permissions_by_user.permission_id')
+            ->where('permissions_by_user.user_id', $user['id'])
+            ->get()->pluck('name')->toArray();
+
+        $merged = array_merge($user->json(), ['permissions' => $query]);
         return response()->json([$merged]);
     }
 }
