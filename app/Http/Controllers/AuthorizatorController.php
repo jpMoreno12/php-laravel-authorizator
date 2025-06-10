@@ -14,7 +14,7 @@ class AuthorizatorController extends Controller
 {
     public function grantPermissions(Request $request)
     {
-        $bearer = $request->header('Authorization');
+        $bearer = $request->bearerToken();
         $user = Http::withToken($bearer)->get('http://127.0.0.1:8000/api/user/check');
 
         $query = DB::table('permissions')
