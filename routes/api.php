@@ -8,4 +8,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/getPermissions', [AuthorizatorController::class, 'grantPermissions']);
+Route::get('/getPermissions', [AuthorizatorController::class, 'grantPermissions']);
