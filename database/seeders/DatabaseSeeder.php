@@ -15,23 +15,23 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         DB::table('permissions')->insert([
-            'name' => 'index',
+            'name' => 'games.index',
         ]);
 
         DB::table('permissions')->insert([
-            'name' => 'store',
+            'name' => 'games.store',
         ]);
 
         DB::table('permissions')->insert([
-            'name' => 'show',
+            'name' => 'games.show',
         ]);
 
         DB::table('permissions')->insert([
-            'name' => 'update',
+            'name' => 'games.update',
         ]);
 
         DB::table('permissions')->insert([
-            'name' => 'destroy',
+            'name' => 'games.destroy',
         ]);
     }
 }
