@@ -59,9 +59,64 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🚀 Getting Started
 
-## API Documentation:
-**Get Permissions:**
+### Prerequisites
+
+- PHP **8.2+**
+- [Composer](https://getcomposer.org/)
+- Laravel **12+**
+- [Postman](https://www.postman.com/) (or other API client)
+- A access token OAuth2 Bearer
+
+---
+
+### 🛠️ Installation
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+---
+## Running the Server
+
+To start the Laravel development server, run:
+
+```bash
+php artisan serve
+```
+
+## Application Ports
+
+By default, each Laravel-based service runs on a different port (address server and port localizated in .env file):
+
+| Service        | Default Port | .env Variable                    |
+|----------------|--------------|----------------------------------|
+| Authenticator  | `8000`       | `AUTHENTICATOR`                  |
+| Authorizator   | `8001`       | `AUTHORIZATHOR`                  |
+| Backend API    | `8003`       | — *(Used directly by clients or frontend)*     |
+
+To run each project on a specific port, use the `--port` flag when starting the Laravel server:
+
+```bash
+php artisan serve --port=8001
+```
+---
+
+## 📘 API Documentation
+
+### Authentication and Route Protection
+
+All API routes are protected using **OAuth2 Bearer tokens**.
+
+To obtain a valid token, please use the authentication project available at:
+
+[php-laravel-authenticator](https://github.com/fabionunespedro/php-laravel-authenticator)
+
+---
+
+### Get Permissions
 ```http
 GET /api/getPermissions
 ```
@@ -69,10 +124,12 @@ Grant permissions and returns a permissions list in case of seccess.
 <br>
 **Header (JSON)**
 ```http
-Authorization: your_access_token
+Authorization: Bearer your_access_token
 ```
 | Code     | Meaning  |
 | -------- | -------  |
 | 200      |Success (returns token)|
+| 401     | Unauthorized (invalid token)|
+
 
 
