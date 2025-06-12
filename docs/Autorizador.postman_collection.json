@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "f89875b4-eaae-4461-a578-aac243158046",
+		"name": "Autorizador",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45186559"
+	},
+	"item": [
+		{
+			"name": "get_permissions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3NDZkNC00ZDFjLTcyM2QtYWM5Zi0xYzU0NzBiMTMzY2EiLCJqdGkiOiIwODljYzBmMDkwZWQ4YTkxZGNjY2E2NzU3ZDliOTE4N2M3Y2QwMDNiMTJiMWIzNjIwOTk0Y2EyZDNkZmFmOWEzNTlhNDI2ZmY3MzliMGFlNyIsImlhdCI6MTc0OTQ4NjMxMi4wMDA4MDg5NTQyMzg4OTE2MDE1NjI1LCJuYmYiOjE3NDk0ODYzMTIuMDAwODEzOTYxMDI5MDUyNzM0Mzc1LCJleHAiOjE3ODEwMjIzMTEuOTc4MTczMDE3NTAxODMxMDU0Njg3NSwic3ViIjoiMSIsInNjb3BlcyI6W119.w8UkbJ6aU6Int4ioVU96mYQFsNyXCMjDjklDGv77eOdJLAzk6PwejkYMpJoyazdWaZeOQa73bJrdo65zb2lo81LoByalimj2AHHfmHBNsBfnCxaPAYcFRJmkSi0tCLwI1nlz9Bunf7btNwxS99HgqL828pkPp79uIVt3I7z936VgYmY7roVMpOjiZi4Te3ugfadWO3pygMPCFaqJIA-_13mUPHJAqkWVYqAyrKZhi9cF84grqJB3JN0eIlYEN78DdDe1kD8R_DoM0gSfvmCofstY4LQeVbfcAimCgKvi946LgRLS00_5vL_PAWkW3agxe0Z71_yi5tIuVfE9ln7b0dkIxUg9Nvyo0BFz2y-5CAQlzQiyWM_KiMlnflIKsc1520CG7ZR-xNjO6RWjWp1_k9rweqNwn89oa4SKaAQNN3zw76AlyQF4E8VrZTbAr3_VDrheCYzUiVanic3f1KFpRRvk6TE2kyEmWyy7ca9cbgtF7fsVaR9RnxNMPX7muDiR80lHFLZPtNZh20fD_ynpXyddjp9VqVCFiBFEeLfxcx9PgwP4bFFReuig2bwokTHFyMYDN-8vM1MQEj7i3OTGB7KDUuDde85_PjVSZzaCIitl-t3ozfCShz2bFKk2AFP5aIY5iz1c8N-ZcAejOdGPq3v2ocmGUAGhYYXNGpbcNl0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_one}}/api/getPermissions",
+					"host": [
+						"{{base_url_one}}"
+					],
+					"path": [
+						"api",
+						"getPermissions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

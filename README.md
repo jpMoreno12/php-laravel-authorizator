@@ -121,5 +121,10 @@ Authorization: Bearer your_access_token
 | 200      |Success (returns token)|
 | 401     | Unauthorized (invalid token)|
 
+---
+# Postman Collection
+> [Download authorizator API collection](docs/Autorizador.postman_collection.json)
 
+---
+![Architecture Diagram](docs/authorizator.drawio.png)
 
